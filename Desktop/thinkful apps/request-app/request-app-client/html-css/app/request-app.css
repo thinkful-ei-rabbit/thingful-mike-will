@@ -1,0 +1,70 @@
+*{
+    /* background-image: url(images/djpic.PNG); */
+    margin: auto;
+    text-align: center;
+}
+body{
+    background-image: url(../images/djpic.PNG);
+}
+
+.neon{
+    font-family: 'Monoton', cursive;
+    color:rgb(216, 29, 216);
+    font-size:88px; 
+}
+.req{
+    background-color: #9524b898;
+    border: none;
+    color: white;
+    /* padding: 30px 150px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Shrikhand', cursive;
+    /* font-size: 32px; */
+
+}
+
+.vote{
+    background-color: #9524b898;
+    border: none;
+    color: white;
+    /* padding: 30px 150px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Shrikhand', cursive;
+    /* font-size: 32px; */
+
+}
+
+.review{
+    background-color: #9524b898;
+    border: none;
+    color: white;
+    /* padding: 30px 150px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Shrikhand', cursive;
+}
+
+button{
+padding: 30px 150px;
+}
+@media (max-width: 400px) {
+    
+    .neon{
+        font-size: 60px;
+        
+    }
+}
