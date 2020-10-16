@@ -36,13 +36,13 @@ console.log(error)
 })
 }
 
+voteHandler 
+
 addSong(song) {
   
 }
   render(){
-    // const songs = this.stat.songs.map(song => (
-    //   <song />
-    // ))
+    
   return (
 
     <main className='App'>
