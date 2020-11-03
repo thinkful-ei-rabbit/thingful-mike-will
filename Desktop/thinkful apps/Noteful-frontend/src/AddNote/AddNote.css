@@ -1,0 +1,23 @@
+.error {
+  color: red;
+}
+
+.Note__add {
+  background-color: #102541;
+  height: 100%;
+  padding: 10px;
+  width: 100%;
+  color: #fff;
+  max-width: 380px;
+}
+
+button.Note__add {
+  cursor: pointer;
+  background-color: #fff;
+  color: #102541;
+}
+
+input[type="text"], textarea {
+  background-color : #d1d1d1;
+  }
+
