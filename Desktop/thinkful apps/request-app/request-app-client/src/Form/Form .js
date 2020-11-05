@@ -43,7 +43,7 @@ export default class Form extends Component {
          const { name, title, artist, comment } = this.state;
          const newSong = { name, title, artist, comment }
          console.log(newSong)
-        const url = 'http://localhost:8000/api/songs'
+        const url = 'https://mighty-temple-37477.herokuapp.com/api/songs'
         const options ={
             method: 'POST',
             body: JSON.stringify(newSong),
