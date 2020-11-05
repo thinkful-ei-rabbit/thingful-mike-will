@@ -73,7 +73,7 @@ class App extends Component {
     renderNavRoutes() {
         return (
             <>
-                {['/', '/folder/:id'].map(path => (
+                {['/', '/folder/:folderId'].map(path => (
                     <Route
                         exact
                         key={path}
@@ -93,7 +93,7 @@ class App extends Component {
             
             <>  
             {'sheesh',console.log()}
-                {['/', `/folder/:id`].map(path => (
+                {['/', `/folder/:folderId`].map(path => (
                     <Route
                         exact
                         key={path}
