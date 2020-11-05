@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Note.css'
 import PropTypes from 'prop-types';
 import ApiContext from '../ApiContext';
+import config from '../config';
 
 export default class Note extends React.Component{
   static defaultProps = {
@@ -15,10 +16,10 @@ export default class Note extends React.Component{
 
   handleClickDelete = e => {
     e.preventDefault()
-    console.log(this.props.id);
+    // console.log("delete",this.props.id);
     const noteId = this.props.id
 
-    fetch(`http://localhost:8000/api/notes/${noteId}`, {
+    fetch(`${config.API_ENDPOINT}api/notes/${noteId}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json'
@@ -39,6 +40,7 @@ export default class Note extends React.Component{
   }
 render () { 
   const { name, id, modified } = this.props
+  console.log('conie',id )
   return (
     <div className='Note'>
       <h2 className='Note__title'>
@@ -65,8 +67,9 @@ render () {
 }
 }
 
-Note.propTypes ={
-  id: PropTypes.string,
-  name: PropTypes.string,
-  modified: PropTypes.string
-};
+// Note.propTypes ={
+//   id: PropTypes.string,
+//   name: PropTypes.string,
+//   modified: PropTypes.string
+// };
+// console.log('props',Note.propTypes.id)

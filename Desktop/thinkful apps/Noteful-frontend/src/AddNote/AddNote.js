@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ApiContext from '../ApiContext';
 import ValidateNote from './ValidateNote';
 import './AddNote.css'
+import config from '../config';
 
 export default class AddNote extends React.Component {
     static contextType = ApiContext;
@@ -31,17 +32,18 @@ export default class AddNote extends React.Component {
 
 
     handleSubmit = (e) => {
+        console.log("click")
         e.preventDefault();
         const newNoteName = e.target.newNote.value;
         const newNoteContent = e.target.noteContent.value;
         const folderId = e.target.selectFolder.value;
 
-        fetch(`http://localhost:8000/api/notes`, {
+        fetch(`${config.API_ENDPOINT}api/notes`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ name: newNoteName, content: newNoteContent, modified: new Date(), folderId})
+            body: JSON.stringify({ note_name: newNoteName, note_content: newNoteContent, modified_date: new Date(), folder_id:folderId})
         })
             .then(response => response.json())
             .then((newAddNote) => {
@@ -49,14 +51,14 @@ export default class AddNote extends React.Component {
                 this.props.history.push('/')
             })
             .catch((error) => {
-                console.log('catch', error);
+                // console.log('catch', error);
             });
 
     }
 
     validateNoteName() {
         const newNoteName = this.state.newNote.value.trim();
-        console.log('validate note ran')
+        // console.log('validate note ran')
         if (newNoteName.length === 0) {
             return 'Your note needs a name!'
         }
@@ -93,7 +95,7 @@ export default class AddNote extends React.Component {
                     ></input>
 
                     <select name="selectFolder">{this.context.folders.map(folder =>
-                        <option key={folder.id} value={folder.id}>{folder.name}</option>)}
+                        <option key={folder.id} value={folder.id}>{folder.folder_name}</option>)}
                     </select>
                     <button
                         className='Note__add'

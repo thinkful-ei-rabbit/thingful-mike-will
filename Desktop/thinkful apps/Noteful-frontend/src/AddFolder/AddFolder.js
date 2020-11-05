@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './AddFolder.css';
 import ApiContext from '../ApiContext';
+import config from '../config';
 // console.log("hey")
 export default class AddFolder extends React.Component {
    
@@ -15,15 +16,15 @@ export default class AddFolder extends React.Component {
        
         // const newFolderName = {name:e.target.newFolder.val};
         const newFolderName = e.target.newFolder.value;
-        console.log('plz',newFolderName)
+        // console.log('plz',newFolderName)
         // const newFolderName = {folder_name}
 
-        fetch(`http://localhost:8000/api/folders`, {
+        fetch(`${config.API_ENDPOINT}api/folders`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ name: newFolderName })
+            body: JSON.stringify({ folder_name: newFolderName } )
            
         })
             .then(response => response.json())
@@ -32,10 +33,10 @@ export default class AddFolder extends React.Component {
                
                 this.context.addFolder(newFolder)
                 this.props.history.push(`/`)
-                console.log('success',newFolder)
+                // console.log('success',newFolder)
             })
             .catch((error) => {
-                console.log('catch', error);
+                // console.log('catch', error);
             });
             
     }
@@ -49,7 +50,7 @@ export default class AddFolder extends React.Component {
         //     folders = [], notes = []
         // } = this.context
         // console.log("attempt",this.handleSubmit)
-        console.log('yams',this.context.folders)
+        // console.log('yams',this.context.folders)
         // console.log("YEERP",e.target.newFolder.value)
         return (
             <div>

@@ -54,3 +54,5 @@ export default class NoteListMain extends React.Component {
 NoteListMain.propTypes ={
   match: PropTypes.object
 };
+
+//1.rename id on line 30

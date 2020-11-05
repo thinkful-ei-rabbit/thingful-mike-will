@@ -15,7 +15,7 @@ export default class NotePageMain extends React.Component {
   }
   static contextType = ApiContext;
 
-  handleDeleteNote = noteId => {
+  handleDeleteNote = noteID => {
     this.props.history.push(`/`)
   }
 
@@ -23,12 +23,13 @@ export default class NotePageMain extends React.Component {
     const { notes=[] } = this.context
     const { noteId } = this.props.match.params
     const note = findNote(notes, noteId) || { content:'' }
+    console.log('jams',note.modified)
   return (
     <section className='NotePageMain'>
       <Note
         id={note.id}
-        name={note.name}
-        modified={note.modified}
+        name={note.note_name}
+        modified={note.modified_date}
         onDeleteNote={this.handleDeleteNote}
       />
       <div className='NotePageMain__content'>

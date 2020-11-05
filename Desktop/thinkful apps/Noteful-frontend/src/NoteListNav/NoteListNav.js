@@ -16,6 +16,7 @@ export default class NoteListNav extends React.Component{
     return (
     <div className='NoteListNav'>
       <ul className='NoteListNav__list'>
+        {/* {console.log('check',folders)} */}
         {folders.map(folder =>
           <li key={folder.id}>
             
@@ -27,7 +28,8 @@ export default class NoteListNav extends React.Component{
                 {countNotesForFolder(notes, folder.id)}
               </span>
               {folder.folder_name}
-              {/* {console.log('trial',folder.folder_name)} */}
+              {/* {console.log('folders',folder)} */}
+              {/* {console.log('notes',notes)} */}
             </NavLink>
           </li>
         )}
@@ -48,3 +50,6 @@ export default class NoteListNav extends React.Component{
   )
 }
 }
+
+//to={`/folder/${folder.id}`}
+//change to {`/api/folders/${id}`}

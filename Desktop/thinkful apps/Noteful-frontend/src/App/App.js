@@ -10,7 +10,7 @@ import AddNote from '../AddNote/AddNote';
 import ErrorBoundary from '../ErrorBoundary';
 import ApiContext from '../ApiContext';
 import './App.css';
-
+import config from '../config';
 
 class App extends Component {
     state = {
@@ -22,9 +22,9 @@ class App extends Component {
 
     componentDidMount() {
         // fake date loading from API call
-        console.log(`http://localhost:8000/api/notes`)
+        // console.log(`${config.API_ENDPOINT}api/folders`)
         Promise.all([
-            fetch(`http://localhost:8000/api/notes`), fetch(`http://localhost:8000/api/folders`)
+            fetch(`${config.API_ENDPOINT}api/notes`), fetch(`${config.API_ENDPOINT}api/folders`)
         ])
         .then(([notesRes, foldersRes]) => {
             console.log("TESTER")
@@ -90,8 +90,10 @@ class App extends Component {
 
     renderMainRoutes() {
         return (
-            <>
-                {['/', '/folder/:id'].map(path => (
+            
+            <>  
+            {'sheesh',console.log()}
+                {['/', `/folder/:id`].map(path => (
                     <Route
                         exact
                         key={path}
