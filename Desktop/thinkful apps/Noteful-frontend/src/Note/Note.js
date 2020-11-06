@@ -18,7 +18,7 @@ export default class Note extends React.Component{
     e.preventDefault()
     // console.log("delete",this.props.id);
     const noteId = this.props.id
-
+    console.log('deleted',noteId)
     fetch(`${config.API_ENDPOINT}api/notes/${noteId}`, {
       method: 'DELETE',
       headers: {
