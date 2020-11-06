@@ -69,7 +69,7 @@ class App extends Component {
             notes: this.state.notes.filter(note => note.id !== noteId)
         })
     }
-
+   
     renderNavRoutes() {
         return (
             <>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { format } from 'date-fns'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Note.css'
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import ApiContext from '../ApiContext';
 import config from '../config';
 
@@ -28,7 +28,7 @@ export default class Note extends React.Component{
       .then(res => {
         if (!res.ok)
           return res.json().then(e => Promise.reject(e))
-        return res.json()
+        return 
       })
       .then(() => {
         this.context.deleteNote(noteId)
